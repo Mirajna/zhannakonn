@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+body {
+    font: 400 16px/30px $base-font;
+    color: $font-color;
+    cursor: default;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;   
+        -ms-user-select: none;
+        -o-user-select: none;
+    user-select: none;
+        -khtml-user-select: none;
+}
+
+.contact, .twitter {
+    p, .author, .text {
+            -moz-user-select: text;
+            -webkit-user-select: text;
+            -webkit-touch-callout: text;   
+            -ms-user-select: text;
+            -o-user-select: text;
+        user-select: text;
+            -khtml-user-select: text;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $links-color;
+}
+
+input {
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1630px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.oliva {
+    .col {
+
+        &__iconwrapper {
+            padding: 9px 0 40px;
+        }
+
+        p {
+            margin: -5px 0 -8px;
+        }
+    }
+}
+
+.boriosa {
+    @include screen(1130) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+    }
+}
+
+.centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 20px;
+}
+
+.col-33 {
+    @extend .col;
+    width: 33.3%;
+}
+
+.col-50 {
+    @extend .col;
+    width: 50%;
+}
+
+.col-66 {
+    @extend .col;
+    width: 66.7%;
+}
+
+.col-100 {
+    @extend .col;
+    width: 100%;
+}
+
+.col {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 265px;
+
+    &__background {
+        position: absolute;
+        min-height: 102%;
+        min-width: 102%;
+        width: auto;
+        max-width: none;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+
+    }
+
+    &__icon {
+        position: relative;
+        z-index: 10;
+
+        &--hidden {
+            @extend .col__icon;
+            opacity: 0;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+            background-color: $img-hover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__presentation {
+        padding: 117px 65px 136px;
+        background: $white;
+        text-align: center;
+        position: relative;
+
+        @include screen(1420) {
+            padding: 55px;
+        }
+
+        @include screen(1130) {
+            padding: 35px 5px;
+        }
+
+        h4 {
+            padding: 16px 0 19px;
+            font-size: 18px;
+            letter-spacing: 3.6px;
+            text-transform: uppercase;
+        }
+
+        p {
+            position: relative;
+            margin: 0 auto;
+            padding-left: 35px;
+            width: 76%;
+            font-size: 18px;
+            line-height: 1.85;
+
+            @include screen(1130) {
+                padding: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    &__iconwrapper {
+        width: 42px;
+        height: 42px;
+        margin: auto;
+    }
+
+    &__text {
+        padding: 62px 66px 94px;
+        background: $white;
+        text-align: center;
+        position: relative;
+
+        @include screen(1420) {
+            padding: 40px 20px;
+        }
+
+        @include screen(1130) {
+            padding: 30px 5px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: calc(50% - 10px);
+            top: 99.7%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: $white transparent transparent transparent;
+            z-index: 1;
+            
+        }
+
+        h4 {
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 3.6px;
+        }
+
+        p {
+            text-align: justify;
+            position: relative;
+
+            @include screen(1420) {
+                text-align: center;
+            }
+
+            &:after {
+                content: '';
+                width: 50px;
+                height: 1px;
+                position: absolute;
+                left: calc(50% - 25px);
+                bottom: -22%;
+                background-color: $accentuation;
+
+                @include screen(1420) {
+                    bottom: -10%;
+                }
+
+                @include screen(340) {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__static-img {
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &--fullheight {
+        @extend .col;
+
+        .row {
+            height: 100%;
+        }
+    }
+}
+
+.work {
+    .col {
+        @include screen(1130) {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            width: 100%;
+            min-height: 200px;
+        }
+    }    
+}
