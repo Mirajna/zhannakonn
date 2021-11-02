@@ -1,0 +1,87 @@
+.twitter {
+    .reviews {
+        margin-bottom: 43px;
+
+        &__logo-soc {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            margin-top: 124px;
+
+            @include screen(1420) {
+                margin-top: 35px;
+            }
+        }
+
+        .swiper-wrapper {
+            margin: 20px 0 100px;
+            text-align: center;
+
+            @include screen(1420) {
+                margin-bottom: 35px;
+            }
+
+            @include screen(640) {
+                margin-bottom: 5px;
+            }
+            
+            .swiper-slide .twit {
+                &__author {
+                    font-size: 18px;
+                    letter-spacing: 2.3px;
+
+                    @include screen(640) {
+                        font-size: 14px;
+                    }
+
+                    a {
+                        font-weight: 600;
+                        padding-right: 6px;
+                    }
+                }
+                
+                &__text {
+                    font-style: italic;
+                    font-size: 24px;
+                    width: 70%;
+                    margin: 0 auto;
+                    line-height: 1.5;
+                    padding: 10px 0 0 35px;
+
+                    @include screen(1420) {
+                        padding-left: 0;
+                    }
+
+                    @include screen(640) {
+                        font-size: 16px;
+                        width: 90%;
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            bottom: 18px;
+
+            @include screen(1420) {
+                bottom: 0;
+            }
+            
+            .swiper-pagination-bullet {
+                background: transparent;
+                border: 2px solid $gray;
+                width: 11px;
+                height: 11px;
+            }
+
+            .swiper-pagination-bullet.swiper-pagination-bullet-active {
+                background: $gray;
+                border: none;
+            }
+        }
+    }
+}
